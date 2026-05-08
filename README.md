@@ -86,7 +86,7 @@ project/
 ├── sample_F.csv
 └── sample_Q.csv
 
-# ▶️ Running the Project
+## ▶️ Running the Project
 
 Step 1 — Generate ECG Demo Samples
 python make_beats.py
@@ -96,7 +96,7 @@ This creates sample ECG heartbeat CSV files for testing the classifier.
 Step 2 — Launch Streamlit App
 streamlit run app.py
 
-# 🧪 Classification Workflow
+## 🧪 Classification Workflow
 
 The application supports:
 
