@@ -85,3 +85,66 @@ project/
 ├── sample_V.csv
 ├── sample_F.csv
 └── sample_Q.csv
+
+# ▶️ Running the Project
+
+Step 1 — Generate ECG Demo Samples
+python make_beats.py
+
+This creates sample ECG heartbeat CSV files for testing the classifier.
+
+Step 2 — Launch Streamlit App
+streamlit run app.py
+
+# 🧪 Classification Workflow
+
+The application supports:
+
+Uploading ECG beat CSV files
+Generating synthetic heartbeat samples
+Visualizing waveform morphology
+Predicting heartbeat class
+Viewing confidence scores
+
+# 📈 Example Classes
+
+Label	Description
+N	Normal Beat
+S	Supraventricular Beat
+V	Ventricular Beat / PVC
+F	Fusion Beat
+Q	Pacemaker Beat
+
+# 📚 Educational Purpose
+
+This project is intended for:
+
+Pattern Recognition learning
+Sequential probabilistic modeling
+ECG signal processing experiments
+HMM implementation practice
+Machine Learning portfolio projects
+
+# 🛠 Technologies
+
+Python
+NumPy
+SciPy
+Scikit-learn
+Matplotlib
+Streamlit
+
+# 📌 Future Improvements
+
+Potential future extensions:
+
+Real MIT-BIH ECG integration
+Real-time ECG streaming
+Deep learning comparison (LSTM / CNN)
+Advanced signal denoising
+Model deployment
+Attention-based sequence models
+
+# 👩‍💻 Author
+
+Developed as a Pattern Recognition and Biomedical Signal Processing project
