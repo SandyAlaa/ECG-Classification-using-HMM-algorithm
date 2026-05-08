@@ -1,84 +1,68 @@
-# 🫀 ECG Heartbeat Classification using Hidden Markov Models
+# 🫀 ECG Heartbeat Classification using HMM
 
-A complete ECG heartbeat classification system built from scratch using Gaussian Hidden Markov Models (HMMs), synthetic ECG signal generation, temporal feature extraction, and an interactive Streamlit application.
-
----
-
-# 📌 Overview
-
-This project demonstrates how sequential probabilistic models can be applied to ECG heartbeat classification.
-
-The system generates synthetic ECG heartbeat waveforms, extracts temporal features, trains one Gaussian HMM per class, and performs classification using sequence log-likelihood scoring.
-
-The entire HMM implementation was developed from scratch using NumPy and SciPy.
+A machine learning system for ECG heartbeat classification using **Hidden Markov Models (HMMs)** implemented from scratch.
 
 ---
 
-# ✨ Features
+## 📌 Project Idea
 
-## 🧠 Custom Gaussian HMM Implementation
-- Forward Algorithm  
-- Backward Algorithm  
-- Baum-Welch (EM Training)  
-- Viterbi Decoding  
-- Log-Likelihood Scoring  
+The system simulates ECG heartbeat signals, extracts temporal features, and classifies heartbeats using a custom Gaussian HMM trained per class.
 
 ---
 
-## 🫀 Synthetic ECG Generator
-Generates realistic heartbeat signals for 5 classes:
+## 🧠 Key Components
 
-- Normal Beat (N)  
-- Supraventricular Beat (S)  
-- Ventricular Beat / PVC (V)  
-- Fusion Beat (F)  
-- Pacemaker Beat (Q)  
+### 1. Synthetic ECG Generator
+Generates heartbeat signals for 5 classes:
+- Normal (N)
+- Supraventricular (S)
+- Ventricular (V)
+- Fusion (F)
+- Pacemaker (Q)
 
-Each signal includes:
-- PQRST morphology simulation  
-- Baseline wander  
-- Additive noise  
-- Random variations  
+Includes realistic ECG behavior (PQRST shape, noise, baseline drift).
 
 ---
 
-## 📊 Feature Extraction
-
-Each heartbeat is converted into a temporal sequence using:
-
-- Amplitude  
-- First Derivative  
-- Second Derivative  
-- Envelope  
-- Rolling Energy  
-- Cumulative Energy  
+### 2. Feature Extraction
+Each beat is converted into a time-series feature representation using:
+- Amplitude
+- Derivatives (1st & 2nd)
+- Envelope
+- Rolling energy
+- Cumulative energy
 
 ---
 
-## 🖥 Streamlit Application
-
-The interactive app provides:
-
-- ECG waveform visualization  
-- Beat preprocessing visualization  
-- HMM training and evaluation  
-- CSV heartbeat classification  
-- Confidence score visualization  
-- Confusion matrix  
-- Error analysis  
+### 3. Hidden Markov Model (from scratch)
+Implemented using NumPy:
+- Forward / Backward algorithms  
+- Baum-Welch (training)  
+- Viterbi decoding  
+- Log-likelihood scoring  
 
 ---
 
-# 📂 Project Structure
+### 4. Streamlit App
+Interactive interface for:
+- ECG visualization  
+- Training HMM models  
+- Classifying uploaded beats  
+- Showing confidence scores  
+- Evaluation results  
+
+---
+
+## 📂 Project Structure
 
 ```text
-project/
+ecg-project/
 │
-├── ecg_data.py        # ECG synthetic generator
-├── features.py        # Feature extraction pipeline
-├── hmm_model.py       # Custom HMM implementation
-├── make_beats.py      # Generate CSV demo samples
+├── ecg_data.py        # ECG signal generator
+├── features.py        # Feature extraction
+├── hmm_model.py       # HMM implementation
 ├── app.py             # Streamlit UI
+├── make_beat.py       # Generate CSV test samples
 │
 ├── sample_N.csv
 ├── sample_S.csv
@@ -86,71 +70,11 @@ project/
 ├── sample_F.csv
 └── sample_Q.csv
 
----
 
-# ▶️ Running the Project
+⚙️ How to Run
 
-## Step 1 — Generate ECG Demo Samples
+1. Generate ECG Samples
+python make_beat.py
 
-```bash
-python make_beats.py
-
-This creates sample ECG heartbeat CSV files for testing the classifier.
-
-## Step 2 — Launch Streamlit App
-
-```bash
+2. Run the Streamlit App
 streamlit run app.py
-
-# 🧪 Classification Workflow
-
-The application supports:
-
-Uploading ECG beat CSV files
-Generating synthetic heartbeat samples
-Visualizing waveform morphology
-Predicting heartbeat class
-Viewing confidence scores
-
-# 📈 Example Classes
-
-Label	Description
-N	Normal Beat
-S	Supraventricular Beat
-V	Ventricular Beat / PVC
-F	Fusion Beat
-Q	Pacemaker Beat
-
-# 📚 Educational Purpose
-
-This project is intended for:
-
-Pattern Recognition learning
-Sequential probabilistic modeling
-ECG signal processing experiments
-HMM implementation practice
-Machine Learning portfolio projects
-
-# 🛠 Technologies
-
-Python
-NumPy
-SciPy
-Scikit-learn
-Matplotlib
-Streamlit
-
-# 📌 Future Improvements
-
-Potential future extensions:
-
-Real MIT-BIH ECG integration
-Real-time ECG streaming
-Deep learning comparison (LSTM / CNN)
-Advanced signal denoising
-Model deployment
-Attention-based sequence models
-
-# 👩‍💻 Author
-
-Developed as a Pattern Recognition and Biomedical Signal Processing project
